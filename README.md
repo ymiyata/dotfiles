@@ -1,13 +1,14 @@
 ymiyata/dotfiles
+========
 
 Information
-========
+--------
 This repository contains all of my dotfiles
 
 - Vim
 
 How to Setup
-========
+--------
 1. git clone git@github.com:ymiyata/dotfiles.git
 2. cd ./dotfiles
 3. Edit .vimrc.unix or .vimrc.win depending on your OS
