@@ -1,0 +1,9 @@
+fun! MySys()
+    return "windows"
+endfun
+
+let $VIMDIR = $HOME.'\dotfiles\vim'
+set runtimepath+=$VIMDIR
+source $VIMDIR\vimrc.neobundle.vim
+source $VIMDIR\vimrc.plugin.vim
+source $VIMDIR\vimrc.vim
