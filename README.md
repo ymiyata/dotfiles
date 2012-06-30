@@ -19,4 +19,4 @@ How to Setup
 5. git submodule init
 6. git submodule update
 7. vim
-8. :NeoBundleInstall!
+8. :NeoBundleInstall
