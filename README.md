@@ -16,5 +16,7 @@ How to Setup
 4. Use .vimrc.unix or .vimrc.win as the ~/.vimrc file
  - cp .vimrc.unix ~/.vimrc (for Unix)
  - cp .vimrc.win ~/_vimrc (for Windows)
-5. vim ./vim/vimrc.neobundle.vim
-6. :NeoBundleInstall!
+5. git submodule init
+6. git submodule update
+7. vim
+8. :NeoBundleInstall!
