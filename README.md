@@ -9,7 +9,7 @@ This repository contains all of my dotfiles
 
 How to Setup
 --------
-1. git clone git@github.com:ymiyata/dotfiles.git
+1. git clone git://github.com/ymiyata/dotfiles.git
 2. cd ./dotfiles
 3. Edit .vimrc.unix or .vimrc.win depending on your OS
  - Set $VIMDIR to directory of your dotfiles/vim directory (default is $HOME/dotfiles/vim)
