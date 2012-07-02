@@ -12,8 +12,8 @@ endif
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 if MySys() == "unix"
     " Only install vimproc and vimshell for Unix
-    NeoBundle 'Shougo/vimproc'
-    NeoBundle 'Shougo/vimshell'
+    NeoBundle 'https://github.com/Shougo/vimproc.git'
+    NeoBundle 'https://github.com/Shougo/vimshell.git'
 endif
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
