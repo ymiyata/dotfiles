@@ -21,6 +21,7 @@ NeoBundle 'https://github.com/Shougo/neocomplcache-clang_complete.git'
 NeoBundle 'https://github.com/Rip-Rip/clang_complete.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
+NeoBundle 'https://github.com/derekwyatt/vim-scala.git'
 
 filetype plugin indent on 
 
