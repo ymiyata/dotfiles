@@ -9,18 +9,18 @@ if has('vim_starting')
     call neobundle#rc(expand($VIMDIR."/bundle"))
 endif
 
-NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 if MySys() == "unix"
     " Only install vimproc and vimshell for Unix
     NeoBundle 'Shougo/vimproc'
     NeoBundle 'Shougo/vimshell'
 endif
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplcache-clang_complete'
-NeoBundle 'Rip-Rip/clang_complete'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'https://github.com/Shougo/unite.vim.git'
+NeoBundle 'https://github.com/Shougo/neocomplcache.git'
+NeoBundle 'https://github.com/Shougo/neocomplcache-clang_complete.git'
+NeoBundle 'https://github.com/Rip-Rip/clang_complete.git'
+NeoBundle 'https://github.com/thinca/vim-quickrun.git'
+NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
 
 filetype plugin indent on 
 
