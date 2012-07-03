@@ -17,12 +17,11 @@ How to Setup
  - cp .vimrc.unix ~/.vimrc (for Unix)
  - cp .vimrc.win ~/_vimrc (for Windows)
 
-####Setup Vim Plugins####
+####Setup Vim Plugins
 From ./dotfiles directly run:
 
-1. git submodule init
-2. git submodule update
-3. vim
-4. :NeoBundleInstall
-5. cd vim/bundle/vimproc
-6. make -f make_xxx.mak (where xxx is your OS. Read vim/bundle/vimproc/doc/vimproc.txt's "INSTALL" section for more detail)
+1. ./setup.sh (setup.sh initializes and updates git submodules and creates vim backup and swap directory in the home directory)
+2. vim
+3. :NeoBundleInstall
+4. cd vim/bundle/vimproc
+5. make -f make_xxx.mak (where xxx is your OS. Read vim/bundle/vimproc/doc/vimproc.txt's "INSTALL" section for more detail)

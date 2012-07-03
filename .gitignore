@@ -10,6 +10,7 @@ vim/bundle/*
 !.gitmodules
 !.vimrc.unix
 !.vimrc.win
+!setup.sh
 !vimrc.neobundle.vim
 !vimrc.plugin.vim
 !vimrc.vim
