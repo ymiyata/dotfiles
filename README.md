@@ -28,7 +28,7 @@ Open bash (cygwin, Git Bash, ...) and execute:
 3. Edit .vimrc.win
  - Set $VIMDIR to directory of your dotfiles\vim directory (default is $HOME\dotfiles\vim)
 
-####Setup Vim Plugins
+####Setup Vim
 From ./dotfiles run:
 
 1. sh setup-win.sh
