@@ -18,7 +18,7 @@ elseif MySys() == "unix"
     set backup
     set backupdir=~/.vimbackup
     " Set unix shell to zsh
-    set shell=zsh
+    set shell=/bin/zsh
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -34,11 +34,9 @@ set visualbell
 set ttyfast
 set ruler
 set nonumber
-set norelativenumber
 set backspace=indent,eol,start
 set laststatus=2
 set history=1000
-set undoreload=10000
 set cpoptions+=J
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
