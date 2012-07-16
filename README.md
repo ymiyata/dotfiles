@@ -19,7 +19,8 @@ From ./dotfiles run:
 5. make -f make_xxx.mak (where xxx is your OS. Read vim/bundle/vimproc/doc/vimproc.txt's "INSTALL" section for more detail)
 
 ##How to Setup on Windows Environment
-Note that on Windows it only configures Vim and nothing else
+Note that on Windows it only configures Vim and nothing else. 
+
 Open bash (cygwin, Git Bash, ...) and execute:
 
 1. git clone git://github.com/ymiyata/dotfiles.git
