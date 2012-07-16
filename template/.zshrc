@@ -32,7 +32,6 @@ alias ack-grep=ack
 alias vi="vim"
 alias la="ls -a"
 alias ll="ls -l"
-alias lh="ls -h"
 alias lla="ls -la"
 alias llh="ls -lh"
 alias llah="ls -lah"
