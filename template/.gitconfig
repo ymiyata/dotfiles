@@ -1,0 +1,32 @@
+[user]
+[core]
+	excludesfile = ~/.gitignore
+    editor = vim
+[alias]
+    amend = commit --amend
+    br = branch
+    co = checkout
+    cm = commit
+    st = status
+[color]
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+[color "branch"]
+    current = green bold
+    local = green
+    remote = red bold
+[color "status"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red
+[color "sh"]
+    branch = yellow
+

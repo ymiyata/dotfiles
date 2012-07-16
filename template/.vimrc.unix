@@ -2,7 +2,7 @@ fun! MySys()
     return 'unix'
 endfun
 
-let $VIMDIR = $HOME.'/dotfiles/vim'
+let $VIMDIR = $DOTFILES_VIMDIR
 set runtimepath+=$VIMDIR
 source $VIMDIR/vimrc.neobundle.vim
 source $VIMDIR/vimrc.plugin.vim

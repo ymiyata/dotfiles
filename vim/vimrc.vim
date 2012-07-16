@@ -17,8 +17,8 @@ elseif MySys() == "unix"
     set directory=~/.vimswap
     set backup
     set backupdir=~/.vimbackup
-    " Set unix shell to bash
-    set shell=/bin/bash
+    " Set unix shell to zsh
+    set shell=zsh
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -34,9 +34,11 @@ set visualbell
 set ttyfast
 set ruler
 set nonumber
+set norelativenumber
 set backspace=indent,eol,start
 set laststatus=2
 set history=1000
+set undoreload=10000
 set cpoptions+=J
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
@@ -83,4 +85,4 @@ noremap <silent> <S-l> :wincmd l<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other keyboard mapping 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-imap jj <Esc>
+inoremap jj <Esc>

@@ -1,23 +1,4 @@
-# Ignore every file (Specify non-ignored file later)
-*
-# Ignore every dotfile and bundles (Specify non-ignored dotfiles later)
-.*
-vim/bundle/*
-
-# Non-ignored files and directories
-!README.md
-!.gitignore
-!.gitmodules
-!.vimrc.unix
-!.vimrc.win
-!setup.sh
-!setup-win.sh
-!vimrc.neobundle.vim
-!vimrc.plugin.vim
-!vimrc.vim
-!vim/colors/*
-!vim/syntax/*
-!vim/bundle/neobundle.vim
-
-# Ignored files
+# Ignored files/directories
 .DS_Store
+.netrwhist
+vim/bundle/*
