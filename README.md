@@ -11,7 +11,7 @@ This repository contains all of my dotfiles. It contains configuration for:
 ##How to Setup on Unix Environment
 1. git clone git://github.com/ymiyata/dotfiles.git
 2. cd ./dotfiles
-3. sh setup.sh
+3. bash setup.sh
 
 ####Setup Vim
 From ./dotfiles run:
