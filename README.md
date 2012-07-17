@@ -12,6 +12,7 @@ This repository contains all of my dotfiles. It contains configuration for:
 1. git clone git://github.com/ymiyata/dotfiles.git
 2. cd ./dotfiles
 3. bash setup.sh
+4. Logout and log back in (.profile, .bash_profile, and .zprofile get loaded on login)
 
 ####Setup Vim
 From ./dotfiles run:
