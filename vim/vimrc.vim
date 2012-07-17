@@ -18,7 +18,7 @@ elseif MySys() == "unix"
     set backup
     set backupdir=~/.vimbackup
     " Set unix shell to zsh
-    set shell=zsh
+    set shell=/bin/zsh
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
