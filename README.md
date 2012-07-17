@@ -4,19 +4,20 @@
 This repository contains all of my dotfiles. It contains configuration for:
 
 - vim
+- bash
 - zsh 
 - git
 
 ##How to Setup on Unix Environment
 1. git clone git://github.com/ymiyata/dotfiles.git
 2. cd ./dotfiles
-4. sh setup.sh
+3. sh setup.sh
 
 ####Setup Vim
 From ./dotfiles run:
 
-4. cd vim/bundle/vimproc
-5. make -f make_xxx.mak (where xxx is your OS. Read vim/bundle/vimproc/doc/vimproc.txt's "INSTALL" section for more detail)
+1. cd vim/bundle/vimproc
+2. make -f make_xxx.mak (where xxx is your OS. Read vim/bundle/vimproc/doc/vimproc.txt's "INSTALL" section for more detail)
 
 ##How to Setup on Windows Environment
 Note that on Windows it only configures Vim and nothing else. 

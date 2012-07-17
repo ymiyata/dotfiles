@@ -13,6 +13,14 @@ cpsafe () {
     fi
 }
 
+prepend () {
+    if [ "$#" -eq 2 ]; then
+        echo $1 | cat - $2 > /tmp/out && mv /tmp/out $2
+    else
+        echo "usage: prepend text file"
+    fi
+}
+
 echo "###############################################################"
 echo "# => Setup git submodules"
 echo "###############################################################"
@@ -31,6 +39,9 @@ for f in $(find template -type f -maxdepth 1); do
     cpsafe $f ~/$(basename $f)
 done
 
+echo "[dotfiles] Setting DOTFILES_DIR environment variable to current directory ($(pwd))"
+prepend "export DOTFILES_DIR=$(pwd)" ~/.profile
+
 echo "[dotfiles] Sourcing .profile"
 source ~/.profile
 
@@ -47,7 +58,7 @@ else
     echo "[zsh] INFO: oh-my-zsh is already installed"
 fi
 
-if [ $SHELL = $(which zsh) ]; then
+if [ $SHELL != $(which zsh) ]; then
     echo "[zsh] Change the default shell to zsh"
     chsh -s $(which zsh)
 fi

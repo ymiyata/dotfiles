@@ -1,5 +1,4 @@
-export DOTFILESDIR="$HOME/Dropbox/repos/dotfiles"
-export DOTFILES_VIMDIR="$DOTFILESDIR/vim"
-export DOTFILES_SHDIR="$DOTFILESDIR/sh"
+export DOTFILES_VIMDIR="$DOTFILES_DIR/vim"
+export DOTFILES_SHDIR="$DOTFILES_DIR/sh"
 
 source $DOTFILES_SHDIR/profile.sh
