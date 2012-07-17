@@ -1,6 +1,6 @@
 [user]
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
     editor = vim
 [alias]
     amend = commit --amend
