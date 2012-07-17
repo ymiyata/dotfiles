@@ -7,7 +7,6 @@
     br = branch
     co = checkout
     cm = commit
-    st = status
 [color]
     ui = auto
     diff = auto

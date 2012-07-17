@@ -3,13 +3,13 @@
 cpsafe () {
     if [ "$#" -eq 2 ]; then
         if [ -f "$2" ]; then
-            echo "Found $2. Original $2 was backed up to $2.bak"
+            printf "\e[1;31;40mFound $2. Original $2 was backed up to $2.bak\e[0m\n"
             cp $2 $2.bak
         fi
-        echo "Copied $1 to $2"
+        printf "\e[1;31;40mCopied $1 to $2\e[0m\n"
         cp $1 $2
     else
-        echo "usage: cpsafe source_file target_file"
+        printf "\e[1;31;40musage: cpsafe source_file target_file\e[0m\n"
     fi
 }
 
@@ -17,76 +17,76 @@ prepend () {
     if [ "$#" -eq 2 ]; then
         echo $1 | cat - $2 > /tmp/out && mv /tmp/out $2
     else
-        echo "usage: prepend text file"
+        printf "\e[1;31;40musage: prepend text file\e[0m\n"
     fi
 }
 
-echo "###############################################################"
-echo "# => Setup git submodules"
-echo "###############################################################"
+printf "\e[1;32;40m###############################################################\e[0m\n"
+printf "\e[1;32;40m# => Setup git submodules                                      \e[0m\n"
+printf "\e[1;32;40m###############################################################\e[0m\n"
 
 git submodule init
 git submodule update
-echo "[git submodule] Finished installing\n"
+printf "\e[1;34;40m[git submodule]\e[0m\e[1;37;40m Finished installing\e[0m\n\n"
 
-echo "###############################################################"
-echo "# => Moving dotfiles files to home directory"
-echo "###############################################################"
+printf "\e[1;32;40m###############################################################\e[0m\n"
+printf "\e[1;32;40m# => Moving dotfiles files to home directory                   \e[0m\n"
+printf "\e[1;32;40m###############################################################\e[0m\n"
 
-echo "[dotfiles] Moving dotfiles to home"
+printf "\e[1;34;40m[dotfiles]\e[0m\e[1;37;40m Moving dotfiles to home\e[0m\n"
 
 for f in $(find template -type f -maxdepth 1); do
     cpsafe $f ~/$(basename $f)
 done
 
-echo "[dotfiles] Setting DOTFILES_DIR environment variable to current directory ($(pwd))"
+printf "\e[1;34;40m[dotfiles]\e[0m\e[1;37;40m Setting DOTFILES_DIR environment variable to current directory ($(pwd))\e[0m\n"
 prepend "export DOTFILES_DIR=$(pwd)" ~/.profile
 
-echo "[dotfiles] Sourcing .profile"
+printf "\e[1;34;40m[dotfiles]\e[0m\e[1;37;40m Sourcing .profile\e[0m\n"
 source ~/.profile
 
-echo "[dotfiles] Finished moving dotfiles\n"
+printf "\e[1;34;40m[dotfiles]\e[0m\e[1;37;40m Finished moving dotfiles\e[0m\n\n"
 
-echo "###############################################################"
-echo "# => Setup zsh"
-echo "###############################################################"
+printf "\e[1;32;40m###############################################################\e[0m\n"
+printf "\e[1;32;40m# => Setup zsh                                                 \e[0m\n"
+printf "\e[1;32;40m###############################################################\e[0m\n"
 
-echo "[zsh] Install oh-my-zsh"
+printf "\e[1;34;40m[zsh]\e[0m\e[1;37;40m Install oh-my-zsh\e[0m\n"
 if [ ! -d ~/.oh-my-zsh ]; then
     /usr/bin/env git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 else
-    echo "[zsh] INFO: oh-my-zsh is already installed"
+    printf "\e[1;34;40m[zsh]\e[0m\e[1;37;40m INFO: oh-my-zsh is already installed\e[0m\n"
 fi
 
 if [ $SHELL != $(which zsh) ]; then
-    echo "[zsh] Change the default shell to zsh"
+    printf "\e[1;34;40m[zsh]\e[0m\e[1;37;40m Change the default shell to zsh\e[0m\n"
     chsh -s $(which zsh)
 fi
 
-echo "[zsh] Finished configuring Z shell\n"
+printf "\e[1;34;40m[zsh]\e[0m\e[1;37;40m Finished configuring Z shell\e[0m\n\n"
 
-echo "###############################################################"
-echo "# => Setup vim environment"
-echo "###############################################################"
+printf "\e[1;32;40m###############################################################\e[0m\n"
+printf "\e[1;32;40m# => Setup vim                                                 \e[0m\n"
+printf "\e[1;32;40m###############################################################\e[0m\n"
 
-echo "[vim] Copying vimrc template to home directory"
+printf "\e[1;34;40m[vim]\e[0m\e[1;37;40m Copying vimrc template to home directory\e[0m\n"
 cpsafe vim/.vimrc.unix ~/.vimrc
 
 if [ ! -d ~/.vimswap ]; then
-    echo "[vim] Created directory ~/.vimswap. This directory will contain all the vim swap files"
+    printf "\e[1;34;40m[vim]\e[0m\e[1;37;40m Created directory ~/.vimswap. This directory will contain all the vim swap files\e[0m\n"
     mkdir ~/.vimswap
 else
-    echo "[vim] ~/.vimswap directory already exists. This directory will be used to store all the vim swap files"
+    printf "\e[1;34;40m[vim]\e[0m\e[1;37;40m ~/.vimswap directory already exists. This directory will be used to store all the vim swap files\e[0m\n"
 fi
 
 if [ ! -d ~/.vimbackup ]; then
-    echo "[vim] Created directory ~/.vimbackup. This directory will contain all the vim backup files"
+    printf "\e[1;34;40m[vim]\e[0m\e[1;37;40m Created directory ~/.vimbackup. This directory will contain all the vim backup files\e[0m\n"
     mkdir ~/.vimbackup
 else
-    echo "[vim] ~/.vimbackup directory already exists. This directory will be used to store all the vim backup files"
+    printf "\e[1;34;40m[vim]\e[0m\e[1;37;40m ~/.vimbackup directory already exists. This directory will be used to store all the vim backup files\e[0m\n"
 fi
 
-echo "[vim] Installing NeoBundles"
+printf "\e[1;34;40m[vim]\e[0m\e[1;37;40m Installing NeoBundles\e[0m\n"
 vim -c NeoBundleInstall -c q
 
-echo "[vim] Finished configuring vim\n"
+printf "\e[1;34;40m[vim]\e[0m\e[1;37;40m Finished configuring vim\e[0m\n\n"
