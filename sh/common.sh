@@ -15,11 +15,10 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 ###############################################################
 alias ack-grep=ack
 alias vi="vim"
-alias la="ls -a"
+alias l="ls -la"
 alias ll="ls -l"
-alias lla="ls -la"
-alias llh="ls -lh"
-alias llah="ls -lah"
+alias lsa="ls -lah"
+alias sl=ls
 alias ~="cd $HOME"
 alias ..="cd .."
 alias ...="cd ../.."
