@@ -15,20 +15,20 @@ bindkey -M viins 'jj' vi-cmd-mode
 ###############################################################
 # => zsh vi mode theme (modified kennethreitz.zsh-theme)
 ###############################################################
-INSERT_MODE_INDICATOR="%{$fg[red]%}-- INSERT --%{$reser_color%}"
-NORMAL_MODE_INDICATOR="%{$fg[yellow]%}-- NORMAL --%{$reser_color%}"
+INSERT_MODE_INDICATOR="%{$fg[red]%}-- INSERT --%{$reset_color%}"
+NORMAL_MODE_INDICATOR="%{$fg[blue]%}-- NORMAL --%{$reset_color%}"
 function vi_mode_prompt_info() {
     echo "${${KEYMAP/vicmd/$NORMAL_MODE_INDICATOR}/(main|viins)/$INSERT_MODE_INDICATOR}"
 }
 
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
-PROMPT='%{$fg[green]%}%c \
+PROMPT='%{$fg[green]%}%~ \
 $(git_prompt_info)\
 %{$fg[red]%}%(!.#.»)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='$(vi_mode_prompt_info) \
-%{$fg[blue]%}%~%{$reset_color%} ${return_code}'
+${return_code}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}:: %{$fg[yellow]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%} "

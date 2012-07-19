@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cpsafe () {
+function cpsafe() {
     if [ "$#" -eq 2 ]; then
         if [ -f "$2" ]; then
             printf "\033[31mFound $2. Original $2 was backed up to $2.bak\033[0m\n"
@@ -13,7 +13,7 @@ cpsafe () {
     fi
 }
 
-prepend () {
+function prepend() {
     if [ "$#" -eq 2 ]; then
         echo $1 | cat - $2 > /tmp/out && mv /tmp/out $2
     else
