@@ -1,31 +1,5 @@
 [user]
-[core]
-    excludesfile = ~/.gitignore
-    editor = vim
-[alias]
-    amend = commit --amend
-    br = branch
-    co = checkout
-    cm = commit
-[color]
-    ui = auto
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-[color "branch"]
-    current = green bold
-    local = green
-    remote = red bold
-[color "status"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-[color "status"]
-    added = green bold
-    changed = yellow bold
-    untracked = red
-[color "sh"]
-    branch = yellow
-
+    # Add your name and email here
+[include]
+    # Change this to the path to your dotfiles/git/.gitconfig
+    path = Dropbox/repos/dotfiles/git/.gitconfig
