@@ -13,6 +13,7 @@ bindkey -v
 bindkey -M viins 'jj' vi-cmd-mode
 bindkey -M vicmd '/' history-incremental-search-backward
 bindkey -M vicmd '?' history-incremental-search-forward
+bindkey -M vicmd '_' vi-beginning-of-line
 
 ###############################################################
 # => zsh vi mode theme (modified kennethreitz.zsh-theme)

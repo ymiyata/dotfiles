@@ -24,6 +24,10 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Basic Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if v:version >= 703
+    set relativenumber
+endif
+
 set encoding=utf-8
 set modelines=0
 set autoindent
@@ -33,7 +37,6 @@ set hidden
 set visualbell
 set ttyfast
 set ruler
-set nonumber
 set backspace=indent,eol,start
 set laststatus=2
 set history=1000
@@ -58,9 +61,13 @@ set title
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
-colorscheme jellybeans 
 if has('gui_running')
     set guifont=Consolas:h10,Lucida_Console:h10:w5
+    set background=dark
+    colorscheme Tomorrow-Night-Bright
+else
+    set background=dark
+    colorscheme Tomorrow-Night-Bright
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -25,6 +25,10 @@ NeoBundle 'https://github.com/derekwyatt/vim-scala.git'
 NeoBundle 'https://github.com/mileszs/ack.vim'
 NeoBundle 'https://github.com/tpope/vim-surround.git'
 
+" colorschemes
+NeoBundle 'https://github.com/altercation/vim-colors-solarized.git'
+NeoBundle 'https://github.com/chriskempson/vim-tomorrow-theme.git'
+
 filetype plugin indent on 
 
 
