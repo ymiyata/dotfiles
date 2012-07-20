@@ -23,6 +23,7 @@ NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'https://github.com/derekwyatt/vim-scala.git'
 NeoBundle 'https://github.com/mileszs/ack.vim'
+NeoBundle 'https://github.com/tpope/vim-surround.git'
 
 filetype plugin indent on 
 

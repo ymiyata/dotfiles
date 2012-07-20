@@ -38,7 +38,9 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$fg[yellow]%}"
 # => zsh specific configuration 
 ###############################################################
 setopt extended_glob
+# Correction gets annoying sometimes
 unsetopt correct
+unsetopt correct_all
 
 REPORTTIME=10
 
