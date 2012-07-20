@@ -11,6 +11,8 @@ source $ZSH/oh-my-zsh.sh
 ###############################################################
 bindkey -v
 bindkey -M viins 'jj' vi-cmd-mode
+bindkey -M vicmd '/' history-incremental-search-backward
+bindkey -M vicmd '?' history-incremental-search-forward
 
 ###############################################################
 # => zsh vi mode theme (modified kennethreitz.zsh-theme)
