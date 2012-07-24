@@ -64,10 +64,10 @@ syntax on
 if has('gui_running')
     set guifont=Consolas:h10,Lucida_Console:h10:w5
     set background=dark
-    colorscheme Tomorrow-Night-Bright
+    colorscheme Tomorrow-Night
 else
     set background=dark
-    colorscheme Tomorrow-Night-Bright
+    colorscheme Tomorrow-Night
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

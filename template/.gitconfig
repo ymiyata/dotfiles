@@ -1,5 +1,5 @@
 [user]
-    # Add your name and email here
+    name = Yoshiya Miyata
+    email = ymiyata3@gmail.com
 [include]
-    # Change this to the path to your dotfiles/git/.gitconfig
     path = Dropbox/repos/dotfiles/git/.gitconfig

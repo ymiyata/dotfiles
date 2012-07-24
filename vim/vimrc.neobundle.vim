@@ -9,25 +9,29 @@ if has('vim_starting')
     call neobundle#rc(expand($VIMDIR."/bundle"))
 endif
 
-NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'https://github.com/Shougo/neobundle.vim'
 if MySys() == "unix"
     " Only install vimproc and vimshell for Unix
-    NeoBundle 'https://github.com/Shougo/vimproc.git'
-    NeoBundle 'https://github.com/Shougo/vimshell.git'
+    NeoBundle 'https://github.com/Shougo/vimproc'
+    NeoBundle 'https://github.com/Shougo/vimshell'
 endif
-NeoBundle 'https://github.com/Shougo/unite.vim.git'
-NeoBundle 'https://github.com/Shougo/neocomplcache.git'
-NeoBundle 'https://github.com/Shougo/neocomplcache-clang_complete.git'
-NeoBundle 'https://github.com/Rip-Rip/clang_complete.git'
-NeoBundle 'https://github.com/thinca/vim-quickrun.git'
+NeoBundle 'https://github.com/Shougo/unite.vim'
+NeoBundle 'https://github.com/Shougo/neocomplcache'
+NeoBundle 'https://github.com/Shougo/neocomplcache-clang_complete'
+NeoBundle 'https://github.com/Rip-Rip/clang_complete'
+NeoBundle 'https://github.com/thinca/vim-quickrun'
+NeoBundle 'https://github.com/mileszs/ack.vim'
+NeoBundle 'https://github.com/tpope/vim-surround'
+
+" framework support
+NeoBundle 'https://github.com/Shadowfiend/liftweb-vim'
+
+" language support
 NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'https://github.com/derekwyatt/vim-scala.git'
-NeoBundle 'https://github.com/mileszs/ack.vim'
-NeoBundle 'https://github.com/tpope/vim-surround.git'
 
 " colorschemes
 NeoBundle 'https://github.com/altercation/vim-colors-solarized.git'
-NeoBundle 'https://github.com/chriskempson/vim-tomorrow-theme.git'
 
 filetype plugin indent on 
 
