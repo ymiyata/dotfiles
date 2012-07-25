@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function cpsafe() {
+cpsafe() {
     if [ "$#" -eq 2 ]; then
         if [ -f "$2" ]; then
             printf "\033[31mFound $2. Original $2 was backed up to $2.bak\033[0m\n"
@@ -13,7 +13,7 @@ function cpsafe() {
     fi
 }
 
-function prepend() {
+prepend() {
     if [ "$#" -eq 2 ]; then
         echo $1 | cat - $2 > /tmp/out && mv /tmp/out $2
     else
@@ -35,7 +35,7 @@ printf "\033[32m###############################################################\
 
 printf "\033[34m[dotfiles]\033[0m\033[37m Moving dotfiles to home\033[0m\n"
 
-for f in $(find template -type f -maxdepth 1); do
+for f in $(find template -maxdepth 1 -type f); do
     cpsafe $f ~/$(basename $f)
 done
 
