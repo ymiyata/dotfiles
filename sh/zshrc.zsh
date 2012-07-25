@@ -61,7 +61,6 @@ alias -s md=vim
 alias -s pl=vim
 alias -s py=vim
 alias -s scala=vim
-alias -s sh=zsh
 alias -s rb=vim
 alias -s tex=vim
 alias -s txt=vim
