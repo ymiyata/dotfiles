@@ -34,5 +34,3 @@ NeoBundle 'https://github.com/derekwyatt/vim-scala.git'
 NeoBundle 'https://github.com/altercation/vim-colors-solarized.git'
 
 filetype plugin indent on 
-
-

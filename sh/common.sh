@@ -13,7 +13,6 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 ###############################################################
 # => aliases 
 ###############################################################
-alias ack=ack-grep
 alias vi="vim"
 alias l="ls -la"
 alias ll="ls -l"

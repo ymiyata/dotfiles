@@ -93,3 +93,4 @@ noremap <silent> <S-l> :wincmd l<CR>
 " => Other keyboard mapping 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap jj <Esc>
+cnoremap qq q!

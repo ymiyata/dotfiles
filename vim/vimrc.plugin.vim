@@ -115,6 +115,14 @@ autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-L> unite#do_action('
 autocmd FileType unite inoremap <silent> <buffer> <expr> <C-L> unite#do_action('vsplit')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Unite sources
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:unite_source_dotfiles = []
+let g:unite_source_dotfiles += split(globpath($DOTFILES_SHDIR, '*.sh\|*.zsh'), '\n')
+let g:unite_source_dotfiles += split(globpath($DOTFILES_VIMDIR, '*.vim'), '\n')
+nnoremap <Space>ud :<C-u>Unite dotfiles<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimShell 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if MySys() == "unix"
