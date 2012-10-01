@@ -1,7 +1,4 @@
-fun! MySys()
-    return "windows"
-endfun
-
+let g:is_windows = has('win32') || has('win64')
 let $VIMDIR = $HOME.'\dotfiles\vim'
 set runtimepath+=$VIMDIR
 source $VIMDIR\vimrc.neobundle.vim

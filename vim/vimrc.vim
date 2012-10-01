@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => OS Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if MySys() == "windows"
+if g:is_windows
     set swapfile
     set directory=$HOME\vimswap
     set backup
@@ -12,7 +12,7 @@ if MySys() == "windows"
     " Set windows shell to cmd.exe
     set shell=cmd.exe
     set shellcmdflag=/C
-elseif MySys() == "unix"
+else
     set swapfile
     set directory=~/.vimswap
     set backup
