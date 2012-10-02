@@ -1,3 +1,5 @@
+let g:mapleader = ","
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => neocomplcache 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -113,7 +115,7 @@ let g:quickrun_config = {
 \ },
 \}
 
-nnoremap <Space>x :QuickRun cpp-quickrun
+nnoremap <Leader>x :QuickRun cpp-quickrun
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Unite
@@ -137,8 +139,8 @@ nnoremap <Space>x :QuickRun cpp-quickrun
 " The prefix key
 nnoremap [unite] <Nop>
 xnoremap [unite] <Nop>
-nmap <Space>u [unite]
-xmap <Space>u [unite]
+nmap <Leader>u [unite]
+xmap <Leader>u [unite]
 
 AlterCommand <cmdwin> u[nite] Unite
 if executable('ack')
@@ -149,7 +151,7 @@ endif
 
 nnoremap <silent>       [unite]a  :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent>       [unite]bf :<C-u>Unite buffer<CR>
-nnoremap <expr><silent> [unite]bd :<SID>s:unite_build()
+nnoremap <expr><silent> [unite]bd :<SID>unite_build()
 function! s:unite_build()
     return ":\<C-u>Unite -buffer-name=build".tabpagenr()." -no-quit build\<CR>"
 endfunction
@@ -180,17 +182,14 @@ nnoremap <silent> [unite]d :<C-u>Unite dotfiles<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimFiler 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Open vimfiler automatically on startup
-autocmd VimEnter * VimFilerExplorer
-autocmd TabEnter * VimFilerExplorer
-
 " The prefix key
 nnoremap [vimfiler] <Nop>
 xnoremap [vimfiler] <Nop>
-nmap <Space>f [vimfiler]
-xmap <Space>f [vimfiler]
+nmap <Leader>f [vimfiler]
+xmap <Leader>f [vimfiler]
 
 let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_safe_mode_by_default = 0
 
 nnoremap [vimfiler] :<C-u>VimFilerBufferDir -split -simple -toggle -winwidth=40 -quit<CR>
 
@@ -206,8 +205,8 @@ endfunction
 " => VimShell 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if !g:is_windows
-    nmap <Space>v <Plug>(vimshell_split_switch)
-    xmap <Space>v <Plug>(vimshell_split_switch)
+    nmap <Leader>v <Plug>(vimshell_split_switch)
+    xmap <Leader>v <Plug>(vimshell_split_switch)
     let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
     let g:vimshell_right_prompt = 'vcs#info("(%s)-[%b]%p", "(%s)-[%b|%a]%p")'
     let g:vimshell_prompt = "» "
