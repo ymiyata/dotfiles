@@ -17,10 +17,11 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_force_overwrite_completefunc = 1
 " Set minimum syntax keyword length.
 let g:neocomplcache_min_syntax_length = 3
+" Lock buffer that doesn't work well with neocomplcache
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " For auto select, and auto delimeter
-let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_select = 0
 let g:neocomplcache_enable_auto_delimiter = 1
 
 " From https://github.com/Shougo/shougo-s-github/blob/master/vim/.vimrc
@@ -62,6 +63,7 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 inoremap <expr><CR>      neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>     pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB>         neocomplcache#sources#snippets_complete#expandable() ? “\<Plug>(neocomplcache_snippets_expand)” : pumvisible() ? “\<C-n>” : “\<TAB>”
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h>     neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>      neocomplcache#smart_close_popup()."\<C-h>"
