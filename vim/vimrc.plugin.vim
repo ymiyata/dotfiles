@@ -63,7 +63,7 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 inoremap <expr><CR>      neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>     pumvisible() ? "\<C-n>" : "\<TAB>"
-imap <expr><TAB>         neocomplcache#sources#snippets_complete#expandable() ? “\<Plug>(neocomplcache_snippets_expand)” : pumvisible() ? “\<C-n>” : “\<TAB>”
+"imap <expr><TAB>         neocomplcache#sources#snippets_complete#expandable() ? “\<Plug>(neocomplcache_snippets_expand)” : pumvisible() ? “\<C-n>” : “\<TAB>”
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h>     neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>      neocomplcache#smart_close_popup()."\<C-h>"
