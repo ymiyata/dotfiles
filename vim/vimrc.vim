@@ -62,6 +62,9 @@ set title
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 if has('gui_running')
+    if g:is_windows
+        set guifont=Consolas:h10
+    endif
     set t_Co=256
     set background=dark
     colorscheme solarized
