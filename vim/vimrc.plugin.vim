@@ -147,9 +147,9 @@ xmap <Leader>u [unite]
 AlterCommand <cmdwin> u[nite] Unite
 if executable('ack')
     let g:unite_source_grep_command = 'ack'
-    let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
-    let g:unite_source_grep_recursive_opt = ''
 endif
+let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
+let g:unite_source_grep_recursive_opt = ''
 
 nnoremap <silent>       [unite]a  :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent>       [unite]bf :<C-u>Unite buffer<CR>
