@@ -26,7 +26,7 @@ alias .....="cd ../../../../"
 alias reload="source ~/.zshrc"
 
 # Jump to dotfiles directory
-alias dotfile="cd $DOTFILES_DIR"
+alias dotfiles="cd $DOTFILES_DIR"
 # Quick edit config files
 alias profile="$EDITOR $DOTFILES_SHDIR/profile.sh"
 alias commonrc="$EDITOR $DOTFILES_SHDIR/common.sh"

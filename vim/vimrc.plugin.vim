@@ -52,23 +52,34 @@ let g:neocomplcache_vim_completefuncs = {
     \}
 
 " Plugin key-mappings.
-imap <silent><C-x>       <Plug>(neocomplcache_snippets_expand)
-smap <silent><C-x>       <Plug>(neocomplcache_snippets_expand)
-
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+imap <silent><C-l> <Plug>(neosnippet_jump_or_expand)
+smap <silent><C-l> <Plug>(neosnippet_jump_or_expand)
+imap <silent><C-k> <Plug>(neosnippet_expand_or_jump)
+smap <silent><C-k> <Plug>(neosnippet_expand_or_jump)
+imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+if has('conceal')
+    set conceallevel=2 concealcursor=i
+endif
+inoremap <expr><C-g> neocomplcache#undo_completion()
+inoremap <expr><C-l> neocomplcache#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <expr><CR>      neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><CR>    neocomplcache#smart_close_popup() . "\<CR>"
+" <C-n>: neocomplcache
+inoremap <expr><C-n>   pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>\<Down>"
+" <C-p>: keyword completion
+inoremap <expr><C-p>   pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>"
 " <TAB>: completion.
-inoremap <expr><TAB>     pumvisible() ? "\<C-n>" : "\<TAB>"
-"imap <expr><TAB>         neocomplcache#sources#snippets_complete#expandable() ? “\<Plug>(neocomplcache_snippets_expand)” : pumvisible() ? “\<C-n>” : “\<TAB>”
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h>     neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>      neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>     neocomplcache#close_popup()
-inoremap <expr><C-e>     neocomplcache#cancel_popup()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><C-h>   neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>    neocomplcache#smart_close_popup()."\<C-h>"
+" <C-y>: paste
+inoremap <expr><C-y>   pumvisible() ? neocomplcache#close_popup() : "\<C-r>\""
+" <C-e>: close popup
+inoremap <expr><C-e>   pumvisible() ? neocomplcache#cancel_popup() : "\<End>"
+inoremap <expr>'       pumvisible() ? neocomplcache#close_popup() : "'"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -87,8 +98,14 @@ let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NeoSnippet
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:neosnippet#snippets_directory=$VIMDIR.'/bundle/snipmate-snippets/snippets,'.$VIMDIR.'/snippets'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Clang Complete
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set completeopt=menu,menuone,longest
 let g:clang_complete_auto = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

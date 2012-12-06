@@ -11,11 +11,12 @@ endif
 
 let g:neobundle_default_git_protocol = 'https'
 
+NeoBundle 'honza/snipmate-snippets'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neocomplcache',
-            \ {'depends': 'Shougo/neocomplcache-snippets-complete'}
+NeoBundle 'Shougo/neocomplcache.git'
+NeoBundle 'Shougo/neosnippet.git'
 NeoBundle 'Shougo/neocomplcache-clang_complete'
 if !g:is_windows
     " Only install vimproc and vimshell for Unix
