@@ -6,6 +6,7 @@ export NODE_PATH="/usr/local/lib/node_modules"
 ###############################################################
 # => path 
 ###############################################################
+export PATH="$HOME/bin:$PATH"
 export PATH="/opt/local/bin:$PATH"
 export PATH="/opt/local/sbin:$PATH"
 export PATH="/bin:$PATH"
