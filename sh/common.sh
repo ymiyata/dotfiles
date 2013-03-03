@@ -24,6 +24,7 @@ alias ...="cd ../.."
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
 alias reload="source ~/.zshrc"
+alias rm="rm -i"
 
 # Jump to dotfiles directory
 alias dotfiles="cd $DOTFILES_DIR"
