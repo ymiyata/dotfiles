@@ -79,7 +79,6 @@ inoremap <expr><BS>    neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>   pumvisible() ? neocomplcache#close_popup() : "\<C-r>\""
 " <C-e>: close popup
 inoremap <expr><C-e>   pumvisible() ? neocomplcache#cancel_popup() : "\<End>"
-inoremap <expr>'       pumvisible() ? neocomplcache#close_popup() : "'"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
