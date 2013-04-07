@@ -1,7 +1,7 @@
 ###############################################################
 # => oh-my-zsh configuration
 ###############################################################
-plugins=(brew git mvn node npm osx pip vi-mode)
+plugins=(brew git github mvn node npm osx pip vi-mode)
 export DISABLE_AUTO_UPDATE="true"
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh

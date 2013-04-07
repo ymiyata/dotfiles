@@ -38,6 +38,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/vim-altercmd'
 NeoBundle 'ujihisa/vimshell-ssh'
+NeoBundle 'vim-script/taglist.vim'
 
 " Unite sources
 NeoBundle 'Shougo/unite-build'

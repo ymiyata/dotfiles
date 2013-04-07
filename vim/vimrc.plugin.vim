@@ -141,8 +141,7 @@ nnoremap <Leader>x :QuickRun cpp-quickrun
 " Key maps
 "
 " [unite]a: list all
-" [unite]bf: list buffer
-" [unite]bd: list build
+" [unite]b: list buffer
 " [unite]c: list file in current directory
 " [unite]d: list dotfiles
 " [unite]g: grep for files
@@ -157,8 +156,8 @@ nnoremap <Leader>x :QuickRun cpp-quickrun
 " The prefix key
 nnoremap [unite] <Nop>
 xnoremap [unite] <Nop>
-nmap <Leader>u [unite]
-xmap <Leader>u [unite]
+nmap <Leader>n [unite]
+xmap <Leader>n [unite]
 
 AlterCommand <cmdwin> u[nite] Unite
 if executable('ack')
@@ -168,11 +167,7 @@ let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
 let g:unite_source_grep_recursive_opt = ''
 
 nnoremap <silent>       [unite]a  :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent>       [unite]bf :<C-u>Unite buffer<CR>
-nnoremap <expr><silent> [unite]bd :<SID>unite_build()
-function! s:unite_build()
-    return ":\<C-u>Unite -buffer-name=build".tabpagenr()." -no-quit build\<CR>"
-endfunction
+nnoremap <silent>       [unite]b  :<C-u>Unite buffer<CR>
 nnoremap <silent>       [unite]c  :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent>       [unite]g  :<C-u>Unite -buffer-name=search -no-quit grep<CR>
 nnoremap <silent>       [unite]h  :<C-u>Unite history/command<CR>
@@ -206,7 +201,6 @@ xnoremap [vimfiler] <Nop>
 nmap <Leader>f [vimfiler]
 xmap <Leader>f [vimfiler]
 
-let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
 
 nnoremap [vimfiler] :<C-u>VimFilerBufferDir -split -simple -toggle -winwidth=40 -quit<CR>
@@ -234,3 +228,16 @@ endif
 " => Vim CoffeeScript 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Taglist
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tags=tags;$HOME/.vim/tags/
+
+let Tlist_Ctags_Cmd='/usr/bin/ctags'
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Close_On_Select = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_File_Fold_Auto_Close = 1
+nmap <Leader>t :TlistToggle<CR>
+xmap <Leader>t :TlistToggle<CR>

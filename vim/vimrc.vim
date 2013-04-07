@@ -56,6 +56,7 @@ set autowrite
 set shiftround
 set autoread
 set title
+set formatoptions-=ro
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
