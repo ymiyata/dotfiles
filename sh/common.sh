@@ -1,7 +1,11 @@
 ###############################################################
 # => environment 
 ###############################################################
-export EDITOR="vim"
+if [[ -d /Applications/MacVim.app/ ]]; then
+    export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
+else
+    export EDITOR="vim"
+fi
 export GREP_OPTIONS="--color=auto"
 export LS_OPTIONS="--color=auto"
 # For Linux
@@ -14,6 +18,9 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # => aliases 
 ###############################################################
 alias vi="vim"
+if [[ -d /Applications/MacVim.app ]]; then
+    alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+fi
 alias l="ls -la"
 alias ll="ls -l"
 alias lsa="ls -lah"
