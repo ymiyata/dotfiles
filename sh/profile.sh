@@ -7,10 +7,19 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     # Source virtualenvwrapper if there is one
     source /usr/local/bin/virtualenvwrapper.sh
 fi
-export JAVA_HOME="$(/usr/libexec/java_home)"
-export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
-export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
-export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+
+if [[ -d /usr/libexec/java_home ]]; then
+    export JAVA_HOME="/usr/libexec/java_home"
+fi
+if [[ -d /usr/java/latest ]] || [[ -h /usr/java/latest ]]; then
+    export JAVA_HOME="/usr/java/latest"
+fi
+
+if [[ -d "$HOME"/.ec2 ]]; then
+    export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
+    export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
+    export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
+fi
 
 ###############################################################
 # => path 

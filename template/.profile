@@ -6,3 +6,6 @@ export DOTFILES_VIMDIR="$DOTFILES_DIR/vim"
 export DOTFILES_SHDIR="$DOTFILES_DIR/sh"
 
 source $DOTFILES_SHDIR/profile.sh
+if [[ -f ~/.profile_local ]]; then
+    source ~/.profile_local
+fi
