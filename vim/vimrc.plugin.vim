@@ -131,6 +131,11 @@ let g:quickrun_config = {
 \   'command': 'coffee',
 \   'exec': ['%c -cbp %s'],
 \ },
+\ 'scala': {
+\   'type': 'scala',
+\   'command': 'scala',
+\   'cmdopt': '-nc',
+\ },
 \}
 
 nnoremap <Leader>x :QuickRun cpp-quickrun
