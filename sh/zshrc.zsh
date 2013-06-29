@@ -1,3 +1,5 @@
+echo "Sourcing $0"
+
 ###############################################################
 # => oh-my-zsh configuration
 ###############################################################
@@ -18,8 +20,8 @@ bindkey -M vicmd '_' vi-beginning-of-line
 ###############################################################
 # => zsh vi mode theme (modified kennethreitz.zsh-theme)
 ###############################################################
-INSERT_MODE_INDICATOR="%{$fg[red]%}-- INSERT --%{$reset_color%}"
-NORMAL_MODE_INDICATOR="%{$fg[blue]%}-- NORMAL --%{$reset_color%}"
+INSERT_MODE_INDICATOR="%{$fg[red]%}[ I ]%{$reset_color%}"
+NORMAL_MODE_INDICATOR="%{$fg[blue]%}[ N ]%{$reset_color%}"
 function vi_mode_prompt_info() {
     echo "${${KEYMAP/vicmd/$NORMAL_MODE_INDICATOR}/(main|viins)/$INSERT_MODE_INDICATOR}"
 }
