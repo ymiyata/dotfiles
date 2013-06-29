@@ -136,6 +136,9 @@ let g:quickrun_config = {
 \   'command': 'scala',
 \   'cmdopt': '-nc',
 \ },
+\ 'markdown': {
+\   'outputter': 'browser',
+\ },
 \}
 
 nnoremap <Leader>x :QuickRun cpp-quickrun

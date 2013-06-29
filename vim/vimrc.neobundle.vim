@@ -9,8 +9,6 @@ if has('vim_starting')
     call neobundle#rc(expand($VIMDIR."/bundle"))
 endif
 
-let g:neobundle_default_git_protocol = 'https'
-
 NeoBundle 'honza/snipmate-snippets'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'Rip-Rip/clang_complete'
@@ -57,6 +55,7 @@ NeoBundle 'Shadowfiend/liftweb-vim'
 " language support
 NeoBundle 'kchmck/vim-coffee-script.git'
 NeoBundle 'derekwyatt/vim-scala.git'
+
 
 " colorschemes
 NeoBundle 'altercation/vim-colors-solarized.git'

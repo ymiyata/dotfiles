@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
 
-cpsafe() {
+symlinksafe() {
     if [ "$#" -eq 2 ]; then
         if [ -f "$2" ]; then
             printf "\033[31mFound $2. Original $2 was backed up to $2.bak\033[0m\n"
-            cp $2 $2.bak
+            mv $2 $2.bak
+	elif [ -L "$2" ]; then
+            printf "\033[31mFound a symlink $2. Removing symlink $2\033[0m\n"
+            rm -f $2
         fi
-        printf "\033[31mCopied $1 to $2\033[0m\n"
-        cp $1 $2
+        printf "\033[31mCreated symlink from $1 to $2\033[0m\n"
+        ln -sf $1 $2
     else
-        printf "\033[31musage: cpsafe source_file target_file\033[0m\n"
+        printf "\033[31musage: symlinksafe source_file target_file\033[0m\n"
     fi
+}
+
+abspath() {
+    echo $(cd $(dirname "$1"); pwd)/$(basename "$1")
 }
 
 prepend() {
@@ -36,7 +43,7 @@ printf "\033[32m###############################################################\
 printf "\033[34m[dotfiles]\033[0m\033[37m Moving dotfiles to home\033[0m\n"
 
 for f in $(find template -maxdepth 1 -type f); do
-    cpsafe $f ~/$(basename $f)
+    symlinksafe $(abspath $f) ~/$(basename $f)
 done
 
 printf "\033[34m[dotfiles]\033[0m\033[37m Setting DOTFILES_DIR environment variable to current directory ($(pwd))\033[0m\n"
@@ -70,7 +77,7 @@ printf "\033[32m# => Setup vim                                                 \
 printf "\033[32m###############################################################\033[0m\n"
 
 printf "\033[34m[vim]\033[0m\033[37m Copying vimrc template to home directory\033[0m\n"
-cpsafe vim/.vimrc.unix ~/.vimrc
+symlinksafe $(abspath 'vim/.vimrc.unix') ~/.vimrc
 
 if [ ! -d ~/.vimswap ]; then
     printf "\033[34m[vim]\033[0m\033[37m Created directory ~/.vimswap. This directory will contain all the vim swap files\033[0m\n"
