@@ -90,16 +90,29 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType python let b:did_ftplugin = 1
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns['ruby'] = '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns['php'] = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns['c'] = '\%(\.\|->\)\h\w*'
+let g:neocomplcache_omni_patterns['cpp'] = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+let g:neocomplcache_force_omni_patterns['python'] = '[^. \t]\.\w*'
+
+" Enabling jedi-vim
+let g:jedi#auto_initialization = 1
+if !exists('g:neocomplcache_omni_functions')
+  let g:neocomplcache_omni_functions = {}
+endif
+let g:neocomplcache_omni_functions['python'] = 'jedi#complete'
+let g:jedi#popup_on_dot = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NeoSnippet
