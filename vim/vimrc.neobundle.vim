@@ -43,6 +43,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/vim-altercmd'
 NeoBundle 'ujihisa/vimshell-ssh'
 NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'vim-scripts/Align'
 
 " Unite sources
 NeoBundle 'Shougo/unite-build'
@@ -61,7 +62,6 @@ NeoBundle 'Shadowfiend/liftweb-vim'
 " language support
 NeoBundle 'kchmck/vim-coffee-script.git'
 NeoBundle 'derekwyatt/vim-scala.git'
-
 
 " colorschemes
 NeoBundle 'altercation/vim-colors-solarized.git'

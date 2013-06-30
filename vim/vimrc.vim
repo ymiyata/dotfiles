@@ -78,11 +78,14 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set textwidth=79
 set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set wrap
+set shiftround
+set autoindent
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Commands 

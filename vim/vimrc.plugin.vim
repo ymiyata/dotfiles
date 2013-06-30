@@ -187,7 +187,7 @@ endif
 let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
 let g:unite_source_grep_recursive_opt = ''
 
-nnoremap <silent>       ;g        :<C-u>Unite grep -buffer-name=search -auto-preview -no-quit<CR>
+nnoremap <silent>       ;a        :<C-u>Unite grep -buffer-name=search -auto-preview -no-quit<CR>
 nnoremap <silent>       [unite]h  :<C-u>Unite history/command<CR>
 nnoremap <silent>       ;f        :<C-u>UniteWithCursorWord -buffer-name=register buffer file_mru bookmark file<CR>
 nnoremap <silent>       ;o        :<C-u>Unite outline -start-insert<CR>
@@ -203,10 +203,6 @@ autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('
 autocmd FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
 autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-L> unite#do_action('vsplit')
 autocmd FileType unite inoremap <silent> <buffer> <expr> <C-L> unite#do_action('vsplit')
-
-
-" <C-t> Tab pages
-nnoremap <silent><expr> <C-t> ":\<C-u>Unite -select=".(tabpagenr()-1)." tab\<CR>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Unite sources
@@ -253,6 +249,14 @@ endif
 " => Vim CoffeeScript 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Jedi Vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:jedi#goto_command           = "[Space]g"
+let g:jedi#get_definition_command = "[Space]d"
+let g:jedi#rename_command         = "[Space]r"
+let g:jedi#related_names_command  = "[Space]n"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Taglist
