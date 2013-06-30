@@ -9,6 +9,12 @@ if has('vim_starting')
     call neobundle#rc(expand($VIMDIR."/bundle"))
 endif
 
+NeoBundle 'davidhalter/jedi-vim', {
+                \ 'build': {
+                \   'mac': 'pip install jedi-vim',
+                \   'unix': 'pip install jedi-vim',
+                \   },
+                \ }
 NeoBundle 'honza/snipmate-snippets'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'Rip-Rip/clang_complete'
@@ -36,7 +42,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tyru/vim-altercmd'
 NeoBundle 'ujihisa/vimshell-ssh'
-NeoBundle 'vim-script/taglist.vim'
+NeoBundle 'vim-scripts/taglist.vim'
 
 " Unite sources
 NeoBundle 'Shougo/unite-build'

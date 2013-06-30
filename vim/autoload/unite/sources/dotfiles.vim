@@ -16,8 +16,7 @@ function! s:unite_source.gather_candidates(args, context)
 endfunction
 
 function! unite#sources#dotfiles#get_dotfiles()
-    let home_dotfiles = split(globpath('~', '.[a-zA-Z0-9]*'), '\n')
-    return home_dotfiles + (exists("g:unite_source_dotfiles") ? g:unite_source_dotfiles : [])
+    return (exists("g:unite_source_dotfiles") ? g:unite_source_dotfiles : [])
 endfunction
 
 function! unite#sources#dotfiles#define()

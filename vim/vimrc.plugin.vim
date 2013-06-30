@@ -1,5 +1,10 @@
 let g:mapleader = ","
 
+nnoremap ; <Nop>
+xnoremap ; <Nop>
+nnoremap , <Nop>
+xnoremap , <Nop>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => neocomplcache 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -136,9 +141,6 @@ let g:quickrun_config = {
 \   'command': 'scala',
 \   'cmdopt': '-nc',
 \ },
-\ 'markdown': {
-\   'outputter': 'browser',
-\ },
 \}
 
 nnoremap <Leader>x :QuickRun cpp-quickrun
@@ -148,9 +150,7 @@ nnoremap <Leader>x :QuickRun cpp-quickrun
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key maps
 "
-" [unite]a: list all
 " [unite]b: list buffer
-" [unite]c: list file in current directory
 " [unite]d: list dotfiles
 " [unite]g: grep for files
 " [unite]h: list history
@@ -164,8 +164,8 @@ nnoremap <Leader>x :QuickRun cpp-quickrun
 " The prefix key
 nnoremap [unite] <Nop>
 xnoremap [unite] <Nop>
-nmap <Leader>n [unite]
-xmap <Leader>n [unite]
+nmap ;n [unite]
+xmap ;n [unite]
 
 AlterCommand <cmdwin> u[nite] Unite
 if executable('ack')
@@ -174,17 +174,16 @@ endif
 let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
 let g:unite_source_grep_recursive_opt = ''
 
-nnoremap <silent>       [unite]a  :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent>       [unite]b  :<C-u>Unite buffer<CR>
-nnoremap <silent>       [unite]c  :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent>       [unite]g  :<C-u>Unite -buffer-name=search -no-quit grep<CR>
+nnoremap <silent>       ;g        :<C-u>Unite grep -buffer-name=search -auto-preview -no-quit<CR>
 nnoremap <silent>       [unite]h  :<C-u>Unite history/command<CR>
-nnoremap                [unite]l  :<C-u>Unite -auto-preview colorscheme<CR>
-nnoremap <silent>       [unite]m  :<C-u>Unite file_mru<CR>
-nnoremap <silent>       [unite]o  :<C-u>Unite outline -start-insert<CR>
-nnoremap <silent>       [unite]r  :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent>       ;f        :<C-u>UniteWithCursorWord -buffer-name=register buffer file_mru bookmark file<CR>
+nnoremap <silent>       ;o        :<C-u>Unite outline -start-insert<CR>
+nnoremap <silent>       ;r        :<C-u>Unite -buffer-name=register register history/yank<CR>
 nnoremap                [unite]s  :<C-u>Unite source<CR>
-nnoremap <silent>       [unite]t  :<C-u>Unite -buffer-name=tag tag tag/include<CR>
+nnoremap <silent>       ;t        :<C-u>UniteWithCursorWord -buffer-name=tag tag tag/include<CR>
+nnoremap <silent>       <C-k>     :<C-u>Unite change jump<CR>
+" Add unite bookmark
+nnoremap <silent>       [Space]b  :<C-u>UniteBookmarkAdd<CR>
 
 " Split window
 autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
@@ -192,12 +191,17 @@ autocmd FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('
 autocmd FileType unite nnoremap <silent> <buffer> <expr> <C-L> unite#do_action('vsplit')
 autocmd FileType unite inoremap <silent> <buffer> <expr> <C-L> unite#do_action('vsplit')
 
+
+" <C-t> Tab pages
+nnoremap <silent><expr> <C-t> ":\<C-u>Unite -select=".(tabpagenr()-1)." tab\<CR>"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Unite sources
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:unite_source_dotfiles = []
-let g:unite_source_dotfiles += split(globpath($DOTFILES_SHDIR, '*.sh\|*.zsh'), '\n')
-let g:unite_source_dotfiles += split(globpath($DOTFILES_VIMDIR, '*.vim'), '\n')
+let g:unite_source_dotfiles += split(globpath('$DOTFILES_DIR/template', '*'), '\n')
+let g:unite_source_dotfiles += split(globpath('$DOTFILES_SHDIR', '*.sh\|*.zsh'), '\n')
+let g:unite_source_dotfiles += split(globpath('$DOTFILES_VIMDIR', '*.vim'), '\n')
 nnoremap <silent> [unite]d :<C-u>Unite dotfiles<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -210,7 +214,7 @@ nmap <Leader>f [vimfiler]
 xmap <Leader>f [vimfiler]
 
 let g:vimfiler_safe_mode_by_default = 0
-
+;;
 nnoremap [vimfiler] :<C-u>VimFilerBufferDir -split -simple -toggle -winwidth=40 -quit<CR>
 
 " Change default key mapping

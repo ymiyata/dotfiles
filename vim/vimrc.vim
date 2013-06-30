@@ -85,6 +85,14 @@ set softtabstop=4
 set wrap
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Commands 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! ToggleOption(option_name)
+    execute 'setlocal' a:option_name.'!'
+    execute 'setlocal' a:option_name.'?'
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Window navigation 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <silent> <S-h> :wincmd h<CR>
@@ -97,3 +105,16 @@ noremap <silent> <S-l> :wincmd l<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap jj <Esc>
 cnoremap qq q!
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Space Mapping and Toggles
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <Space> [Space]
+xmap <Space> [Space]
+nnoremap [Space] <Nop>
+xnoremap [Space] <Nop>
+
+nnoremap <silent> [Space]. :<C-u>call ToggleOption('relativenumber')<CR>
+nnoremap <silent> [Space]p :<C-u>call ToggleOption('paste')<CR>
+nnoremap <silent> [Space]w :<C-u>call ToggleOption('wrap')<CR>
+
