@@ -163,16 +163,13 @@ nnoremap <Leader>x :QuickRun cpp-quickrun
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key maps
 "
-" [unite]b: list buffer
-" [unite]d: list dotfiles
-" [unite]g: grep for files
-" [unite]h: list history
-" [unite]l: list colorscheme
-" [unite]m: list most recently used
-" [unite]o: list outline
-" [unite]r: list register
-" [unite]s: list unite sources
-" [unite]t: list tags
+" [unite]d : list dotfiles
+" ;a       : (ack) grep for files
+" [unite]h : list history
+" ;o       : list outline
+" ;r       : list register
+" [unite]s : list unite sources
+" ;t       : list tags
 
 " The prefix key
 nnoremap [unite] <Nop>
@@ -189,7 +186,7 @@ let g:unite_source_grep_recursive_opt = ''
 
 nnoremap <silent>       ;a        :<C-u>Unite grep -buffer-name=search -auto-preview -no-quit<CR>
 nnoremap <silent>       [unite]h  :<C-u>Unite history/command<CR>
-nnoremap <silent>       ;f        :<C-u>UniteWithCursorWord -buffer-name=register buffer file_mru bookmark file<CR>
+nnoremap <silent>       ;f        :<C-u>Unite -buffer-name=register buffer file_mru bookmark file -start-insert<CR>
 nnoremap <silent>       ;o        :<C-u>Unite outline -start-insert<CR>
 nnoremap <silent>       ;r        :<C-u>Unite -buffer-name=register register history/yank<CR>
 nnoremap                [unite]s  :<C-u>Unite source<CR>
@@ -208,7 +205,6 @@ autocmd FileType unite inoremap <silent> <buffer> <expr> <C-L> unite#do_action('
 " => Unite sources
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:unite_source_dotfiles = []
-let g:unite_source_dotfiles += split(globpath('$DOTFILES_DIR/template', '*'), '\n')
 let g:unite_source_dotfiles += split(globpath('$DOTFILES_SHDIR', '*.sh\|*.zsh'), '\n')
 let g:unite_source_dotfiles += split(globpath('$DOTFILES_VIMDIR', '*.vim'), '\n')
 nnoremap <silent> [unite]d :<C-u>Unite dotfiles<CR>
@@ -257,6 +253,7 @@ let g:jedi#goto_command           = "[Space]g"
 let g:jedi#get_definition_command = "[Space]d"
 let g:jedi#rename_command         = "[Space]r"
 let g:jedi#related_names_command  = "[Space]n"
+let g:jedi#pydoc                  = "[Space]k"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Taglist

@@ -78,8 +78,8 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set textwidth=79
 set expandtab
+set smarttab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
