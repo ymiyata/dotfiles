@@ -9,12 +9,6 @@ if has('vim_starting')
     call neobundle#rc(expand($VIMDIR."/bundle"))
 endif
 
-NeoBundle 'davidhalter/jedi-vim', {
-                \ 'build': {
-                \   'mac': 'pip install jedi-vim',
-                \   'unix': 'pip install jedi-vim',
-                \   },
-                \ }
 NeoBundle 'honza/snipmate-snippets'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'Rip-Rip/clang_complete'
