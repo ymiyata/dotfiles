@@ -59,9 +59,6 @@ inoremap <expr><BS>    neocomplcache#smart_close_popup()."\<C-h>"
 " <C-e>: close popup
 inoremap <expr><C-e>   pumvisible() ? neocomplcache#cancel_popup() : "\<End>"
 
-" Enable omni completion.
-autocmd FileType python let b:did_ftplugin = 1
-
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
@@ -73,7 +70,6 @@ let g:neocomplcache_omni_patterns['ruby'] = '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns['php'] = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns['c'] = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns['cpp'] = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
-let g:neocomplcache_force_omni_patterns['python'] = '[^. \t]\.\w*'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NeoSnippet

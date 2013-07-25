@@ -103,6 +103,12 @@ noremap <silent> <S-k> :wincmd k<CR>
 noremap <silent> <S-l> :wincmd l<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Tab navigation 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <TAB> :<C-u>tabnext<CR>
+nnoremap <silent> <S-TAB> :<C-u>tabprevious<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other keyboard mapping 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap jj <Esc>
@@ -116,6 +122,7 @@ xmap <Space> [Space]
 nnoremap [Space] <Nop>
 xnoremap [Space] <Nop>
 
+nnoremap <silent> [Space]t :<C-u>tabnew<CR>
 nnoremap <silent> [Space]. :<C-u>call ToggleOption('relativenumber')<CR>
 nnoremap <silent> [Space]p :<C-u>call ToggleOption('paste')<CR>
 nnoremap <silent> [Space]w :<C-u>call ToggleOption('wrap')<CR>

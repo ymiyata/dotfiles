@@ -30,6 +30,7 @@
     amend = commit --amend
     br = branch
     co = checkout
+    cb = checkout -b
     cm = commit
 [color]
     ui = auto
