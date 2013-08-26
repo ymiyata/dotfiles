@@ -10,6 +10,7 @@ if has('vim_starting')
 endif
 
 NeoBundle 'honza/snipmate-snippets'
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'Shougo/neobundle.vim'
