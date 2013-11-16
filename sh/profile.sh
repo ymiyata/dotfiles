@@ -7,6 +7,7 @@ export NODE_PATH="/usr/local/lib/node_modules"
 export WORKON_HOME="$HOME/envs"
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     # Source virtualenvwrapper if there is one
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 

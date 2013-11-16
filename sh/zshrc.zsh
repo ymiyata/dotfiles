@@ -3,7 +3,7 @@ echo "Sourcing $0"
 ###############################################################
 # => oh-my-zsh configuration
 ###############################################################
-plugins=(brew github mvn node npm osx pip vi-mode)
+plugins=(brew github mvn node npm osx pip)
 export DISABLE_AUTO_UPDATE="true"
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
@@ -11,11 +11,11 @@ source $ZSH/oh-my-zsh.sh
 ###############################################################
 # => zsh vi mode settings (
 ###############################################################
-bindkey -v
-bindkey -M viins 'jj' vi-cmd-mode
-bindkey -M vicmd '/' history-incremental-search-backward
-bindkey -M vicmd '?' history-incremental-search-forward
-bindkey -M vicmd '_' vi-beginning-of-line
+# bindkey -v
+# bindkey -M viins 'jj' vi-cmd-mode
+# bindkey -M vicmd '/' history-incremental-search-backward
+# bindkey -M vicmd '?' history-incremental-search-forward
+# bindkey -M vicmd '_' vi-beginning-of-line
 
 ###############################################################
 # => zsh vi mode theme (modified kennethreitz.zsh-theme)

@@ -2,10 +2,8 @@
 " => OS Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if g:is_windows
-    set swapfile
-    set directory=$HOME\vimswap
-    set backup
-    set backupdir=$HOME\vimbackup
+    set noswapfile
+    set nobackup
     " Turn IME off
     set iminsert=0
     set imsearch=0
@@ -13,10 +11,8 @@ if g:is_windows
     set shell=cmd.exe
     set shellcmdflag=/C
 else
-    set swapfile
-    set directory=~/.vimswap
-    set backup
-    set backupdir=~/.vimbackup
+    set noswapfile
+    set nobackup
     " Set unix shell to zsh
     set shell=/bin/zsh
 endif
