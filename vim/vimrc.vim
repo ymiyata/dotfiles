@@ -123,3 +123,6 @@ nnoremap <silent> [Space]. :<C-u>call ToggleOption('relativenumber')<CR>
 nnoremap <silent> [Space]p :<C-u>call ToggleOption('paste')<CR>
 nnoremap <silent> [Space]w :<C-u>call ToggleOption('wrap')<CR>
 
+nnoremap <silent> [Space][Space] V
+nnoremap <silent> [Space]o :CtrlP<CR>
+
