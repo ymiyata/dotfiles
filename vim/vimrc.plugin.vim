@@ -32,11 +32,6 @@ autocmd FileType unite inoremap <silent> <buffer> <expr> <C-L> unite#do_action('
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Unite sources
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:unite_source_dotfiles = []
-let g:unite_source_dotfiles += split(globpath('$DOTFILES_SHDIR', '*.sh\|*.zsh'), '\n')
-let g:unite_source_dotfiles += split(globpath('$DOTFILES_VIMDIR', '*.vim'), '\n')
-nnoremap <silent> [unite]d :<C-u>Unite dotfiles<CR>
-
 if executable('pt')
     let g:unite_source_grep_command = 'pt'
     let g:unite_source_grep_default_opts = '--nogroup --nocolor'
@@ -60,8 +55,6 @@ nnoremap <silent> [unite]b       :<C-u>Unite -buffer-name=buffers
 nnoremap <silent> [unite]c       :<C-u>Unite -buffer-name=changes
             \                                -auto-reviews
             \                                change jump<CR>
-nnoremap <silent> [unite]d       :<C-u>Unite -buffer-name=files
-            \                                dotfiles<CR>
 nnoremap <silent> [unite]f       :<C-u>UniteWithBufferDir -buffer-name=files
             \                                file_rec/async<CR>
 nnoremap <silent> [unite]l       :<C-u>Unite -buffer-name=search

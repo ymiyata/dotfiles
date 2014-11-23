@@ -53,6 +53,10 @@ set shiftround
 set autoread
 set title
 set formatoptions-=ro
+" Disable scratch preview for completion
+set completeopt-=preview
+" Vimdiff
+set diffopt+=vertical
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -124,8 +128,4 @@ nnoremap <silent> [Space]t :<C-u>tabnew<CR>
 nnoremap <silent> [Space]. :<C-u>call ToggleOption('relativenumber')<CR>
 nnoremap <silent> [Space]p :<C-u>call ToggleOption('paste')<CR>
 nnoremap <silent> [Space]w :<C-u>call ToggleOption('wrap')<CR>
-nnoremap <silent> [Space]x :<C-u>call ToggleOption('expandtab')<CR>
-
-nnoremap <silent> [Space][Space] V
-nnoremap <silent> [Space]o :CtrlP<CR>
-
+nnoremap <silent> [Space]e :<C-u>call ToggleOption('expandtab')<CR>
