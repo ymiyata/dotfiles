@@ -93,10 +93,12 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Window navigation 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap <silent> <S-h> :wincmd h<CR>
-noremap <silent> <S-j> :wincmd j<CR>
-noremap <silent> <S-k> :wincmd k<CR>
-noremap <silent> <S-l> :wincmd l<CR>
+noremap <silent> <C-h> :wincmd h<CR>
+noremap <silent> <C-j> :wincmd j<CR>
+noremap <silent> <C-k> :wincmd k<CR>
+noremap <silent> <C-l> :wincmd l<CR>
+" Map S-k to Nop since it's annoying
+noremap <silent> <S-k> <Nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tab navigation 
@@ -122,4 +124,5 @@ nnoremap <silent> [Space]t :<C-u>tabnew<CR>
 nnoremap <silent> [Space]. :<C-u>call ToggleOption('relativenumber')<CR>
 nnoremap <silent> [Space]p :<C-u>call ToggleOption('paste')<CR>
 nnoremap <silent> [Space]w :<C-u>call ToggleOption('wrap')<CR>
+nnoremap <silent> [Space]x :<C-u>call ToggleOption('expandtab')<CR>
 
