@@ -40,7 +40,7 @@ set cpoptions+=J
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set lazyredraw
-set matchtime=3
+set matchtime=1
 set showbreak=↪
 set splitbelow
 set splitright
@@ -53,10 +53,15 @@ set shiftround
 set autoread
 set title
 set formatoptions-=ro
+set display=lastline
+set pumheight=10
+set ambiwidth=double
 " Disable scratch preview for completion
 set completeopt-=preview
 " Vimdiff
 set diffopt+=vertical
+
+nnoremap Y y$
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
